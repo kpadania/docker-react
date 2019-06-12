@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -d kpadania/docker-react npm run test
+
+deploy: 
+  provider: elasticbeakstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-830990676668"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
