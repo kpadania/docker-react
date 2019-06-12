@@ -6,4 +6,4 @@ before_install:
   - docker build -t kpadania/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run kpadania/docker-react npm run test -- --coverage
+  - docker run -d kpadania/docker-react npm run test
