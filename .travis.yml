@@ -9,7 +9,7 @@ script:
   - docker run -d kpadania/docker-react npm run test
 
 deploy: 
-  provider: elasticbeakstalk
+  provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-react"
   env: "DockerReact-env"
